@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  webserver:
+    image: manikantanr/go-webserver-hello-world
+    ports:
+      - "80:8080"
+  appserver:
+    build: .
+    # command: sleep 10000
+    depends_on:
+      - webserver
